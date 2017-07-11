@@ -1,0 +1,55 @@
+<!--<!DOCTYPE html>
+    <head>
+        <meta charset= "utf-8">
+        <title> Drop Downs for Countries and States </title>
+        <meta name = "descritption" content= "">
+        
+        <script src="js/outils.js"></script>
+    </head>
+    <body>
+        <div>
+            <select id="name">
+                <option value="0">Select Country</option>
+                <option value="India">India</option>
+                <option value="United States">United States</option>
+            </select>
+            <select id="file.json"></select>    
+        </div>
+    </body>
+</html>-->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!-- Angular polyfill required everywhere -->
+    <script src="https://code.angularjs.org/2.0.0-beta.8/angular2-polyfills.js"></script>
+
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.8/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.8/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.8/router.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.8/http.dev.js"></script>
+
+ </head>
+
+  <body>
+        <h2>Drop Down list for Countries and States</h2>
+        <label>Country:</label>
+        <!--A DropDown menu for selecting a country we use ngFor for the loop--> 
+        <select [(ngModel)]="Country.id" (change)="onSelect($event.target.value)">
+            <option value="0">--Select--</option>
+            <option *ngFor="#country of countries" value= {{countries.id}}>{{countries.name}}</option>
+        </select>
+        <br/><br/>
+        <div>
+            <label>State:</label>
+            <select>
+                <!--A DropDown menu for selecting a state we use ngIf for selecting a state 
+                depending on the respective country--> 
+                <option *ngIf='Country.id == 0' value="0">--Select--</option>
+                <option *ngFor="#state of states " value= {{state.id}}>{{state.name}}</option>
+            </select>
+        </div>
+    </body>
+</html>

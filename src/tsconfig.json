@@ -1,0 +1,19 @@
+
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions":{
+        "moduleResolution": "node",
+        "module":"commonjs",
+        "target": "es6",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "watch": true,
+        "allowJs": true,
+        "outDir": "./dist",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [ "es2015", "dom" ],
+        "suppressImplicitAnyIndexErrors": true
+    
+    }
+}
